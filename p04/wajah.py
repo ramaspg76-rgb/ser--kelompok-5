@@ -18,6 +18,7 @@ class Wajah:
  def tampilkan(self):
     print(self.alis)
     print(self.bibir)
+    
 if __name__ == "__main__":
  wajah = Wajah()
  wajah.tampilkan()

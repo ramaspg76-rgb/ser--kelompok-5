@@ -23,3 +23,5 @@ if __name__ == "__main__":
     print("Jumlah servo yang sudah dibuat:", Servo.jumlah_servo)
     servo_leher = Servo("leher")
     print("Jumlah servo sekarang:", Servo.jumlah_servo)
+    servo_leher = Servo("leher")
+print("Jumlah servo sekarang:", Servo.jumlah_servo)

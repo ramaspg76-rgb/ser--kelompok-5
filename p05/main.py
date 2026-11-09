@@ -1,29 +1,28 @@
+
 from komponen import Mikrofon, SensorSuhu, Servo, LampuIndikator
 
-# 1. Instansiasi objek
 mik = Mikrofon("mik-1")
-suhu = SensorSuhu("suhu-1")
+suhu = SensorSuhu("suhu-servo")
 alis = Servo("alis", 90)
-led = LampuIndikator("led-1")
+led = LampuIndikator("led") # Tambahan Job 3
 
-# 2. Pengisian data / aksi
 mik.baca(40.0)
 mik.baca(55.0)
 mik.baca(70.0)
-
 suhu.baca(31.5)
 suhu.baca(36.0)
 suhu.baca(33.2)
-
 alis.gerak_ke(120)
-led.atur(-5)
+led.atur(80) # Kita set awal 80
 
-# 3. Pengujian Polimorfisme (perulangan seragam pada daftar perangkat)
-daftar_perangkat = [mik, suhu, alis, led]
-
-print("=== Pengujian Polimorfisme (Job 3) ===")
-for p in daftar_perangkat:
+daftar = [mik, suhu, alis, led] # led dimasukkan ke daftar
+for p in daftar:
     p.nyalakan()
-    hasil = p.proses()  # Memanggil proses() sesuai class masing-masing
-    print(f"{p} -> Hasil Proses: {hasil}")
-    
+    hasil = p.proses()
+    print(p, "->", hasil)
+
+# --- Kode uji LampuIndikator (Butir 6) ---
+print("=== Uji LampuIndikator ===")
+for nilai in [80, 150, -5]:
+    led.atur(nilai)
+    print(f"atur({nilai}) -> proses() = {led.proses()}")

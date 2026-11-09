@@ -1,7 +1,6 @@
 from perangkat import Sensor, Aktuator
 from statistik import rata_rata, tertinggi
 
-
 class Mikrofon(Sensor):
     def __init__(self, nama):
         super().__init__(nama, "dB")
@@ -9,14 +8,14 @@ class Mikrofon(Sensor):
     def proses(self):
         return rata_rata(self.data)
 
-
 class SensorSuhu(Sensor):
     def __init__(self, nama):
-        super().__init__(nama, "C")
+        super().__init__(nama, "c")
 
     def proses(self):
         return tertinggi(self.data)
 
+# (Class Servo dan LampuIndikator biarkan di bawahnya, tidak perlu diubah)
 
 class Servo(Aktuator):
     def gerak_ke(self, sudut):
@@ -28,8 +27,7 @@ class Servo(Aktuator):
 
     def proses(self):
         return self.nilai
-
-
+    
 class LampuIndikator(Aktuator):
     def atur(self, persen):
         if persen < 0:
@@ -39,22 +37,4 @@ class LampuIndikator(Aktuator):
         self.nilai = persen
 
     def proses(self):
-        return self.nilai / 100.0
-    
-    
-
-def tertinggi(data):
-    if not data:
-        return 0.0
-    return max(data)
-
-
-if __name__ == "__main__":
-    m = Mikrofon("mik-test")
-    m.baca(40.0)
-    m.baca(60.0)
-    print(f"Hasil proses Mikrofon: {m.proses()}")
-
-    sv = Servo("servo-test")
-    sv.gerak_ke(150)
-    print(f"Hasil proses Servo: {sv.proses()}")
+        return self.nilai / 100

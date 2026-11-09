@@ -1,3 +1,4 @@
+
 class Perangkat:
     def __init__(self, nama):
         self.nama = nama
@@ -37,7 +38,7 @@ class Aktuator(Perangkat):
 
 
 if __name__ == "__main__":
-    s = Sensor("sensor-uji", "dB")
+    s = Sensor("sensor-uji", "db")
     a = Aktuator("aktuator-uji", 10)
     s.nyalakan()
     print(s)
@@ -48,3 +49,6 @@ if __name__ == "__main__":
     s.baca(40.0)
     s.baca(50.0)
     print(s.data)
+    print(s.data)
+    a.nyalakan()        # <-- TAMBAHKAN
+    print(a)            # <-- TAMBAHKAN         # <-- TAMBAHKAN BARIS INI

@@ -24,9 +24,3 @@ def test_batas_senang():
 def test_batas_sedih():
     e = Emosi(0.3)
     assert e.tentukan_label() == "sedih"
-
-
-if __name__ == "__main__":
-    import pytest
-
-    raise SystemExit(pytest.main([__file__, "-q"]))

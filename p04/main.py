@@ -1,7 +1,7 @@
 from wajah import Wajah
 from emosi import Emosi
 
-data_uji = [0.85, 0.2, 0.5, 0.65, 0.05]
+data_uji = [0.85, 0.2, 0.5, 0.65, 0.05, 0.3]
 
 wajah = Wajah()
 
